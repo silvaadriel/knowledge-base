@@ -1,9 +1,9 @@
 <template>
   <div class="dashboard">
-    <base-header/>
-    <base-menu/>
-    <base-content/>
-    <base-footer/>
+    <base-header title="Knowledge Base" />
+    <base-menu />
+    <base-content />
+    <base-footer />
   </div>
 </template>
 

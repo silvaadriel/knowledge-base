@@ -1,10 +1,20 @@
 <template>
-  <div class="header"></div>
+  <div class="header">
+    <h1 class="header-title">
+      {{ title }}
+    </h1>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'BaseHeader',
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+  },
 };
 </script>
 
@@ -16,5 +26,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &-title {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 100;
+    text-align: center;
+    flex-grow: 1;
+  }
 }
 </style>
