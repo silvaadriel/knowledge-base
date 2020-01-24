@@ -6,6 +6,10 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     isMenuVisible: false,
+    user: {
+      name: 'user mock',
+      email: 'email@mock.com',
+    },
   },
   mutations: {
     setIsMenuVisible(state, isVisible) {

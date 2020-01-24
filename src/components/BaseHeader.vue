@@ -4,12 +4,14 @@
     <h1 class="header__title">
       {{ title }}
     </h1>
+    <base-user-dropdown />
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
 import BaseHamburgerButton from './BaseHamburgerButton.vue';
+import BaseUserDropdown from './BaseUserDropdown.vue';
 
 export default {
   name: 'BaseHeader',
@@ -21,6 +23,7 @@ export default {
   },
   components: {
     BaseHamburgerButton,
+    BaseUserDropdown,
   },
   methods: {
     ...mapActions(['toggleMenu']),
@@ -38,7 +41,7 @@ export default {
   align-items: center;
 
   &__menu-button {
-    margin-left: 20px;
+    padding: 0 20px;
   }
 
   &__title {
