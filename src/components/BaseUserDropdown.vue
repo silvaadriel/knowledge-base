@@ -18,7 +18,9 @@
         { 'user-dropdown__content--open': isOpen,
       }]"
     >
-      <a href><i class="fa fa-cogs"></i> Administration</a>
+      <router-link to="/admin">
+        <i class="fa fa-cogs"></i> Administration
+      </router-link>
       <a href><i class="fa fa-sign-out"></i> Exit</a>
     </div>
   </div>

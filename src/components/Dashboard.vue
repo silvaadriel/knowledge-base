@@ -2,7 +2,11 @@
   <div :class="['dashboard', { 'dashboard--menu-visible': isMenuVisible }]">
     <base-header title="Knowledge Base" />
     <base-menu class="dashboard__menu" />
-    <base-content class="dashboard__content" />
+    <base-content class="dashboard__content">
+      <template slot="content">
+        <router-view/>
+      </template>
+    </base-content>
     <base-footer />
   </div>
 </template>
