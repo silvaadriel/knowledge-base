@@ -2,7 +2,7 @@
   <div class="header">
     <BaseHamburgerButton class="header__menu-button" @click="toggleMenu" />
     <h1 class="header__title">
-      {{ title }}
+      <router-link to="/">{{ title }}</router-link>
     </h1>
     <base-user-dropdown />
   </div>
@@ -50,6 +50,11 @@ export default {
     font-weight: 100;
     text-align: center;
     flex-grow: 1;
+
+    & a {
+      color: #fff;
+      text-decoration: none;
+    }
   }
 }
 </style>

@@ -1,14 +1,20 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Dashboard from '../views/Dashboard.vue';
+import Home from '../views/Home.vue';
+import Administration from '../views/Administration.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'dashboard',
-    component: Dashboard,
+    name: 'home',
+    component: Home,
+  },
+  {
+    path: '/admin',
+    name: 'administration',
+    component: Administration,
   },
 ];
 
