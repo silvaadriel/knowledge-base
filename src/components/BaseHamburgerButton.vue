@@ -52,7 +52,7 @@ export default {
 
   &__bar1, &__bar2, &__bar3 {
     width: 35px;
-    height: 5px;
+    height: 2px;
     margin: 6px 0;
     border-radius: 5px;
     transition: 0.4s;
@@ -60,7 +60,7 @@ export default {
 
   &__bar1--change {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-5px, 6px);
   }
 
   &__bar2--change {
@@ -69,7 +69,7 @@ export default {
 
   &__bar3--change {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-4px, -8px);
   }
 }
 </style>

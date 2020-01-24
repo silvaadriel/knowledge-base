@@ -1,12 +1,16 @@
 <template>
   <div class="header">
-    <h1 class="header-title">
+    <BaseHamburgerButton class="header__menu-button" @click="toggleMenu" />
+    <h1 class="header__title">
       {{ title }}
     </h1>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+import BaseHamburgerButton from './BaseHamburgerButton.vue';
+
 export default {
   name: 'BaseHeader',
   props: {
@@ -14,6 +18,12 @@ export default {
       type: String,
       required: true,
     },
+  },
+  components: {
+    BaseHamburgerButton,
+  },
+  methods: {
+    ...mapActions(['toggleMenu']),
   },
 };
 </script>
@@ -27,7 +37,11 @@ export default {
   justify-content: center;
   align-items: center;
 
-  &-title {
+  &__menu-button {
+    margin-left: 20px;
+  }
+
+  &__title {
     color: #fff;
     font-size: 1.2rem;
     font-weight: 100;
