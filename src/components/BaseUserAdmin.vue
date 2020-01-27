@@ -80,6 +80,7 @@
           base-url="#page-"
           :number-of-pages="numberOfPages"
           @change="getUsers"
+          :value="currentPage"
           first-number
           last-number
         />
@@ -121,6 +122,7 @@ export default {
       },
       { key: 'actions', sortable: false },
     ],
+    currentPage: 1,
     count: null,
     limit: 10,
   }),
@@ -141,10 +143,11 @@ export default {
       this.mode = mode;
       this.user = { ...user };
     },
-    async getUsers(page) {
+    async getUsers(page = 1) {
       const { data: response } = await httpClient.get(`/users?page=${page}&limit=${this.limit}`);
       this.users = response.data;
       this.count = response.count;
+      this.currentPage = page;
     },
     async reset() {
       this.mode = 'save';
