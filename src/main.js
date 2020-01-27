@@ -5,6 +5,7 @@ import store from './store';
 
 import './config/bootstrap';
 import 'font-awesome/css/font-awesome.css';
+import './config/vueToasted';
 
 Vue.config.productionTip = false;
 
