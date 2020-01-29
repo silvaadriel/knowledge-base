@@ -6,7 +6,7 @@ const httpClient = axios.create({
     'Access-Control-Allow-Origin': '*',
     'Content-Type': 'application/json',
     Authorization: // temporary
-      'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MzcsIm5hbWUiOiJBZHJpZWwgZGEgU2lsdmEiLCJlbWFpbCI6InNpbHZhYWRyaWVsMDEyQGdtYWlsLmNvbSIsImFkbWluIjp0cnVlLCJpYXQiOjE1Nzk5NTQxNzYsImV4cCI6MTU4MDIxMzM3Nn0.6pbynWloFTVnCCcBQu-izmMPKr5kNo5RzLr7wt7aw1Q',
+      'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NSwibmFtZSI6IkFkcmllbCBkYSBTaWx2YSIsImVtYWlsIjoic2lsdmFhZHJpZWw1MTFAZ21haWwuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTU4MDA1ODExMiwiZXhwIjoxNTgwMzE3MzEyfQ.rF0lPp4STHLgh54l4FdzRp_riaSpotZNyhsFFR9lop8',
     post: {
       'Content-Type': 'x-www-form-urlencoded',
     },
