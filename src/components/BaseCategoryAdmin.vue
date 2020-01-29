@@ -15,7 +15,7 @@
       <b-form-group label="Parent category" label-for="category-parentId">
         <b-form-select
           id="category-parentId"
-          :options="categories"
+          :options="parentCategories"
           v-model="category.parentId"
           :disabled="mode === 'remove'"
         />
@@ -71,6 +71,7 @@ export default {
     mode: 'save',
     category: {},
     categories: [],
+    parentCategories: [],
     fields: [
       { key: 'id', sortable: true },
       { key: 'name', sortable: true },
@@ -83,6 +84,7 @@ export default {
   }),
   created() {
     this.getCategories();
+    this.getParentCategories();
   },
   computed: {
     numberOfPages() {
@@ -98,11 +100,15 @@ export default {
       this.mode = mode;
       this.category = { ...category };
     },
+    async getParentCategories() {
+      const { data } = await httpClient.get('/categories?all=true');
+      this.parentCategories = data.map(category => ({
+        text: category.path, value: category.id,
+      }));
+    },
     async getCategories(page = 1) {
       const { data: response } = await httpClient.get(`/categories?page=${page}&limit=${this.limit}`);
-      this.categories = response.data.map(category => ({
-        ...category, text: category.path, value: category.id,
-      }));
+      this.categories = response.data;
       this.count = response.count;
       this.currentPage = page;
     },
@@ -110,6 +116,7 @@ export default {
       this.mode = 'save';
       this.category = {};
       this.getCategories();
+      this.getParentCategories();
     },
     async save() {
       const method = this.category.id ? 'put' : 'post';
